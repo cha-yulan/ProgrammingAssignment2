@@ -1,15 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-
-}
-
-
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  inv <- NULL
+  place <- function(y) {
+    x <<- y
+    inv <<- NULL
+  }
+  get <- function() x
+  placeInverse <- function() inv <<- solve(x) #calculate the inverse matrix
+  getInverse <- function() inv
+  list(place = place,
+       get = get,
+       placeInverse = placeInverse,
+       getInverse = getInverse)
 }
